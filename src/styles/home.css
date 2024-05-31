@@ -1,0 +1,158 @@
+
+
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90px; /* Full viewport height to center vertically */
+    padding: 290px;
+    margin-top: 150px;
+    margin-right: 90px;
+  }
+
+  h5{
+
+    line-height: 5vh;
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-right: 5vw;
+    margin-left: 5vw;
+    margin-top: -100vh;
+    margin-bottom: 6vh;
+    color: #ffffff;
+  }
+
+/* Responsive Styles */
+@media (max-width: 1500px) {
+   
+    h5 {
+        line-height: 5vh;
+        font-size: 1.2em;
+        font-weight: 600;
+        margin-right: 5vw;
+        margin-left: 5vw;
+        margin-top: -150vh;
+        margin-bottom: 6vh;
+        color: #ffffff;
+  }
+    
+
+  
+
+   
+}
+
+@media (max-width: 992px) {
+    h1 {
+        font-size: 40px;
+    }
+
+    .heading {
+        font-size: 3em;
+    }
+
+    h5 {
+        line-height: 5vh;
+        font-size: 1.2em;
+        font-weight: 600;
+        margin-right: 5vw;
+        margin-left: 5vw;
+        margin-top: -100vh;
+        margin-bottom: 6vh;
+        color: #ffffff;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 0.8em 1.3em;
+    }
+
+    .artist-button,
+    .artist-image {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 35px;
+    }
+
+    .heading {
+        font-size: 2.5em;
+        margin-bottom: 50vh;
+    }
+
+    h5 {
+        line-height: 5vh;
+        font-size: 1.2em;
+        font-weight: 600;
+        margin-right: 5vw;
+        margin-left: 5vw;
+        margin-top: -100vh;
+        margin-bottom: 6vh;
+        color: #ffffff;
+    }
+
+    button {
+        font-size: 15px;
+        padding: 0.7em 1.1em;
+    }
+
+    .artist-button,
+    .artist-image {
+        width: 70px;
+        height: 70px;
+    }
+
+    .inner-header {
+        height: auto;
+    }
+
+    .buttons-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .buttons-container button {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+
+
+    h5 {
+        line-height: 5vh;
+        font-size: 1.2em;
+        font-weight: 600;
+        margin-right: 5vw;
+        margin-left: 5vw;
+        margin-top: -100vh;
+        margin-bottom: 6vh;
+        color: #ffffff;
+    }
+
+  
+}
+
+@media (max-width:1700px) {
+
+
+    h5 {
+        line-height: 5vh;
+        font-size: 1.2em;
+        font-weight: 600;
+        margin-right: 5vw;
+        margin-left: 5vw;
+        margin-top: -200vh;
+        margin-bottom: 6vh;
+        color: #ffffff;
+    }
+
+  
+}

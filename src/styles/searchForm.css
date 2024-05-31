@@ -1,0 +1,103 @@
+.form-label {
+    color: white;
+    
+  }
+  
+/* Style for the search form container to center content */
+.search-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: -45px; /* Adjust as needed to position below header */
+    padding: 20px;
+  }
+  
+  /* Center the form within the container */
+  .search-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px; /* Adjust max width as needed */
+  }
+  
+  /* Style for the error message */
+  .errorMsg {
+    color: red;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  
+/* Styles for the artist buttons container */
+.artist-buttons-container {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  /* Styles for each artist button */
+  .artist-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .artist-button.selected {
+    border: 2px solid #1db954; /* Highlight selected artists */
+  }
+  
+  .artist-button img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .artist-button div {
+    margin-top: 10px;
+    color: white;
+  }
+
+  /* Style for the MyPlaylist button */
+.my-playlist-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #1db954;
+    border-color: #1db954;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1em;
+  }
+  
+  .my-playlist-button:hover {
+    background-color: #1ed760;
+    border-color: #1ed760;
+  }
+  
+
+  /* Styles for action buttons */
+.action-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+  }
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .header h1 {
+      font-size: 2em;
+    }
+    .header p {
+      font-size: 1em;
+    }
+    .search-form-container {
+      flex-direction: column;
+    }
+    .search-result .category-items {
+      flex-direction: column;
+    }
+  }

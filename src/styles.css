@@ -1,0 +1,254 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600;700&display=swap");
+/*
+:root {
+    --header-height: 5.5rem;
+    --first-color: hsl(28, 88%, 62%);
+    --title-color: hsl(0, 0%, 95%);
+    --text-color: hsl(0, 0%, 100%);
+    --body-color: hsl(0, 0%, 6%);
+    --body-font: "Montserrat", sans-serif;
+    --second-font: "Dancing Script", cursive;
+    --h2-font-size: 1.25rem;
+    --small-font-size: 0.813rem;
+    --font-semi-bold: 600;
+    --z-tooltip: 10;
+    --z-fixed: 100;
+   }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  height: 600%;
+  width: 100%;
+  box-sizing: border-box;
+  background: linear-gradient(90deg, rgb(46, 46, 46), rgb(233, 30, 99), rgb(156, 39, 176), rgb(63, 81, 181));
+  background-repeat: no-repeat;
+    animation: mygradient 24s linear infinite alternate;
+    -webkit-animation: mygradient 24s linear infinite alternate;
+
+  font-family: 'Montserrat', -apple-system, system-ui, BlinkMacSystemFont,
+    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 20px;
+  letter-spacing: 1px;
+  color: #778298;
+}
+@media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+@keyframes mygradient {
+    0% {
+        background-position: 0%
+    }
+
+    600% {
+        background-position: 600%
+    }
+}
+@keyframes wave {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    50% {
+        transform: rotate(90deg)
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+#wave {
+    height: 600%;
+    overflow: hidden;
+    position:-ms-page;
+}
+
+#wave:before,
+#wave:after {
+  content: "";
+  overflow: hidden;
+  position: absolute;
+  bottom: 40%;
+  left: -250vw;
+  width: 600vw;
+  height: 600vw;
+  background: rgba(0, 0, 0, 0.375);
+  border-radius: 48% 52% 52% 48% / 48% 52% 48% 52%;
+  animation: wave 9s ease-in-out infinite;
+  animation-delay: -3s;
+}
+
+#wave:after {
+  animation: wave 9s linear infinite;
+}
+.btn {
+  letter-spacing: 1px;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login .btn {
+  font-size: 1.2rem;
+}
+
+.main {
+  width: 90%;
+  margin: 2rem auto;
+}
+
+.form-control {
+  font-size: 1.2rem;
+}
+
+.main-heading {
+  margin: 2rem 0;
+}
+
+.hide {
+  display: none;
+}
+
+.active {
+  border: 2px solid #566273;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-top: 10%;
+  font-size: 150%;
+}
+
+.load-more {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.load-more button {
+  border: none;
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  letter-spacing: 1px;
+  outline: none;
+}
+
+#loader {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 99999;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.4)
+  );
+}
+
+.message {
+  position: relative;
+  font-size: 150%;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-10%);
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.loader-open {
+  overflow: hidden;
+}
+
+.errorMsg {
+  color: #f21e08;
+  background: #fff0f0;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.search-buttons {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-buttons .btn {
+  margin: 0.8rem;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  font-weight: bold;
+  color: #778298;
+}
+
+.search-buttons .btn:focus {
+  box-shadow: none;
+}
+
+.albums,
+.artists,
+.playlist {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  margin: 1rem;
+  box-shadow: 0 2px 7px 3px #949ca5;
+}
+
+.card .card-image-link {
+  padding: 1rem;
+  text-align: center;
+}
+
+.card img {
+  max-width: 250px;
+  height: 250px;
+}
+
+@media screen and (max-width: 400px) {
+  .search-buttons {
+    flex-direction: column;
+  }
+  .search-buttons .btn {
+    margin: 0.6rem;
+  }
+  .card img {
+    height: auto;
+  }
+  .main-heading {
+    text-align: center;
+  }
+}
+*/
