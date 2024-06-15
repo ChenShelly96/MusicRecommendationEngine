@@ -1,15 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+    margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-y: scroll;
+
+}
+/* General styles for form labels */
 .form-label {
     color: white;
-    
   }
   
-/* Style for the search form container to center content */
-.search-form-container {
+  /* Style for the search form container to center content */
+  .search-form-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: -45px; /* Adjust as needed to position below header */
+    margin-top: 0%;
+    margin-right: 20%;
+    margin-left: 0%;
     padding: 20px;
   }
   
@@ -21,6 +35,18 @@
     width: 100%;
     max-width: 600px; /* Adjust max width as needed */
   }
+
+  .search-btn{
+    margin-left: 110%;
+     margin-top: -55px;
+   
+   
+  }
+  .action-btn-container{
+     margin: 1rem;
+      height: auto;
+       box-sizing: border-box;
+  }
   
   /* Style for the error message */
   .errorMsg {
@@ -28,13 +54,15 @@
     text-align: center;
     margin-bottom: 10px;
   }
-
   
-/* Styles for the artist buttons container */
-.artist-buttons-container {
-    margin-top: 20px;
-    width: 100%;
-    max-width: 1200px;
+
+  /* Styles for the artist buttons container */
+  .artist-buttons-container {
+      height: auto;
+      margin-left: 20%;
+      margin-right: 10%;
+      margin-top: 10%;
+      width: 100%;
   }
   
   /* Styles for each artist button */
@@ -43,6 +71,8 @@
     border: none;
     cursor: pointer;
     text-align: center;
+    margin-left: 20px;
+    margin-bottom: 30px;
   }
   
   .artist-button.selected {
@@ -59,10 +89,16 @@
   .artist-button div {
     margin-top: 10px;
     color: white;
+    margin-left: 10px;
+    
+    
   }
-
+  .artist-name{
+    margin: -30px;
+    
+  }
   /* Style for the MyPlaylist button */
-.my-playlist-button {
+  .my-playlist-button {
     position: absolute;
     top: 20px;
     right: 20px;
@@ -78,26 +114,112 @@
     border-color: #1ed760;
   }
   
-
   /* Styles for action buttons */
-.action-buttons {
+  .action-buttons {
     margin-top: 20px;
     display: flex;
     gap: 10px;
   }
+  .track-list-container {
+    margin-top: 10px;
+    
+}
 
-/* Responsive styles */
-@media (max-width: 768px) {
-    .header h1 {
-      font-size: 2em;
+.track-list-item {
+  text-align: center;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin: 2px;
+}
+  .track-list {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.track-list li {
+  margin-bottom: 5px;
+  font-size: 0.9em;
+  color: #555;
+}
+.list-group-item{
+
+        background-color: rgb(44 45 47);
+}
+
+/* the buttons of the list tracks */
+.btn-primary {
+    color: #fff;
+   background-color: rgb(44 45 47);
+    border-color: rgb(44 45 47);
+}
+  /* Responsive styles */
+  @media (max-width: 1200px) {
+    .artist-buttons-container {
+      max-width: 100%;
     }
-    .header p {
-      font-size: 1em;
-    }
-    .search-form-container {
-      flex-direction: column;
-    }
-    .search-result .category-items {
-      flex-direction: column;
+    .artist-button img {
+      width: 80px;
+      height: 80px;
     }
   }
+   
+  @media (max-width: 768px) {
+    .search-form-container {
+      margin-top: 0;
+      padding: 10px;
+    }
+  
+    .search-form {
+      width: 90%;
+      max-width: 100%;
+    }
+  
+    .artist-button img {
+      width: 60px;
+      height: 60px;
+    }
+  
+    .artist-button div {
+      font-size: 0.9em;
+    }
+  
+    .my-playlist-button {
+      font-size: 0.9em;
+      padding: 8px 16px;
+    }
+  
+    .action-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .action-buttons button {
+      width: 80%;
+      max-width: 300px;
+      margin-bottom: 10px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .search-form {
+      width: 100%;
+      padding: 10px;
+    }
+  
+    .artist-button img {
+      width: 50px;
+      height: 50px;
+    }
+  
+    .artist-button div {
+      font-size: 0.8em;
+    }
+  
+    .my-playlist-button {
+      font-size: 0.8em;
+      padding: 6px 12px;
+    }
+  }
+  

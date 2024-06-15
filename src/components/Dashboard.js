@@ -74,7 +74,7 @@ const Dashboard = (props) => {
         <div className="dashboard-container">
           <SearchForm handleSearch={handleSearch} />
           <Loader show={isLoading}>Loading...</Loader>
-          <SearchResult
+          <SearchResult 
             result={result}
             loadMore={loadMore}
             setCategory={setCategory}

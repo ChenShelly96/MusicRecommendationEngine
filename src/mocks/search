@@ -1,0 +1,296 @@
+{
+    "search_results": {
+        "artist": [
+            {
+                "spotify_id": "6qqNVTkY8uBg9cP3Jd7DAH",
+                "name": "Billie Eilish"
+            },
+            {
+                "spotify_id": "06HL4z0CvFAxyc27GXpf02",
+                "name": "Taylor Swift"
+            },
+            {
+                "spotify_id": "1Xyo4u8uXC1ZmMpatF05PJ",
+                "name": "The Weeknd"
+            },
+            {
+                "spotify_id": "3TVXtAsR1Inumwj472S9r4",
+                "name": "Drake"
+            },
+            {
+                "spotify_id": "687cZJR45JO7jhk1LHIbgq",
+                "name": "Tems"
+            },
+            {
+                "spotify_id": "7tjVFCxJdwT4NdrTmjyjQ6",
+                "name": "Muni Long"
+            },
+            {
+                "spotify_id": "0cGUm45nv7Z6M6qdXYQGTX",
+                "name": "Kehlani"
+            },
+            {
+                "spotify_id": "3Y7RZ31TRPVadSFVy1o8os",
+                "name": "H.E.R."
+            },
+            {
+                "spotify_id": "4fxd5Ee7UefO4CUXgwJ7IP",
+                "name": "Giveon"
+            },
+            {
+                "spotify_id": "4IVAbR2w4JJNJDDRFP3E83",
+                "name": "6LACK"
+            },
+            {
+                "spotify_id": "3QTDHixorJelOLxoxcjqGx",
+                "name": "SiR"
+            },
+            {
+                "spotify_id": "57LYzLEk2LcFghVwuWbcuS",
+                "name": "Summer Walker"
+            },
+            {
+                "spotify_id": "5ZS223C6JyBfXasXxrRqOk",
+                "name": "Jhené Aiko"
+            },
+            {
+                "spotify_id": "63XBtGSEZINSyXylZxEUbv",
+                "name": "Victoria Monét"
+            },
+            {
+                "spotify_id": "4GvEc3ANtPPjt1ZJllr5Zl",
+                "name": "Bazzi"
+            },
+            {
+                "spotify_id": "5fi7lIgJGH3RgUpJYcffQ7",
+                "name": "4batz"
+            },
+            {
+                "spotify_id": "3qBKjEOanahMxlRojwCzhI",
+                "name": "Zacari"
+            },
+            {
+                "spotify_id": "1vaQ6v3pOFxAIrFoPrAcom",
+                "name": "Ari Lennox"
+            },
+            {
+                "spotify_id": "1ybINI1qPiFbwDXamRtwxD",
+                "name": "Smino"
+            },
+            {
+                "spotify_id": "7Hjbimq43OgxaBRpFXic4x",
+                "name": "Saba"
+            }
+        ],
+        "tracks": [
+            {
+                "spotify_id": "5Y35SjAfXjjG0sFQ3KOxmm",
+                "name": "Nobody Gets Me",
+                "artists_id": [
+                    {
+                        "spotify_id": "7tYKF4w9nC0nq9CsPZTHyP",
+                        "name": "SZA"
+                    }
+                ]
+            },
+            {
+                "spotify_id": "0impvergaW8CuQS2OcEWMu",
+                "name": "Nobody Gets Me",
+                "artists_id": [
+                    {
+                        "spotify_id": "7tYKF4w9nC0nq9CsPZTHyP",
+                        "name": "SZA"
+                    }
+                ]
+            },
+            {
+                "spotify_id": "0xaFw2zDYf1rIJWl2dXiSF",
+                "name": "Open Arms (feat. Travis Scott)",
+                "artists_id": [
+                    {
+                        "spotify_id": "7tYKF4w9nC0nq9CsPZTHyP",
+                        "name": "SZA"
+                    },
+                    {
+                        "spotify_id": "0Y5tJX1MQlPlqiwlOH1tJY",
+                        "name": "Travis Scott"
+                    }
+                ]
+            },
+            {
+                "spotify_id": "1tyZQWv1RLv3CgDJ82KEd2",
+                "name": "Nobody Gets Me",
+                "artists_id": [
+                    {
+                        "spotify_id": "7tYKF4w9nC0nq9CsPZTHyP",
+                        "name": "SZA"
+                    }
+                ]
+            },
+            {
+                "spotify_id": "4PMqSO5qyjpvzhlLI5GnID",
+                "name": "Good Days",
+                "artists_id": [
+                    {
+                        "spotify_id": "7tYKF4w9nC0nq9CsPZTHyP",
+                        "name": "SZA"
+                    }
+                ]
+            },
+            {
+                "spotify_id": "4iZ4pt7kvcaH6Yo8UoZ4s2",
+                "name": "Snooze",
+                "artists_id": [
+                    {
+                        "spotify_id": "7tYKF4w9nC0nq9CsPZTHyP",
+                        "name": "SZA"
+                    }
+                ]
+            },
+            {
+                "spotify_id": "7aQi48ImHQsfni7tDlFQvL",
+                "name": "Snooze",
+                "artists_id": [
+                    {
+                        "spotify_id": "7tYKF4w9nC0nq9CsPZTHyP",
+                        "name": "SZA"
+                    }
+                ]
+            },
+            {
+                "spotify_id": "2CSRrnOEELmhpq8iaAi9cd",
+                "name": "Blind",
+                "artists_id": [
+                    {
+                        "spotify_id": "7tYKF4w9nC0nq9CsPZTHyP",
+                        "name": "SZA"
+                    }
+                ]
+            },
+            {
+                "spotify_id": "2fXwCWkh6YG5zU1IyvQrbs",
+                "name": "Broken Clocks",
+                "artists_id": [
+                    {
+                        "spotify_id": "7tYKF4w9nC0nq9CsPZTHyP",
+                        "name": "SZA"
+                    }
+                ]
+            },
+            {
+                "spotify_id": "2wSTnntOPRi7aQneobFtU4",
+                "name": "Shirt",
+                "artists_id": [
+                    {
+                        "spotify_id": "7tYKF4w9nC0nq9CsPZTHyP",
+                        "name": "SZA"
+                    }
+                ]
+            },
+            {
+                "spotify_id": "2GAhgAjOhEmItWLfgisyOn",
+                "name": "Low",
+                "artists_id": [
+                    {
+                        "spotify_id": "7tYKF4w9nC0nq9CsPZTHyP",
+                        "name": "SZA"
+                    }
+                ]
+            },
+            {
+                "spotify_id": "4h6ViRoztTBpWcJ1zFT9Zg",
+                "name": "20 Something",
+                "artists_id": [
+                    {
+                        "spotify_id": "7tYKF4w9nC0nq9CsPZTHyP",
+                        "name": "SZA"
+                    }
+                ]
+            },
+            {
+                "spotify_id": "4h5x3XHLVYFJaItKuO2rhy",
+                "name": "Ghost in the Machine (feat. Phoebe Bridgers)",
+                "artists_id": [
+                    {
+                        "spotify_id": "7tYKF4w9nC0nq9CsPZTHyP",
+                        "name": "SZA"
+                    },
+                    {
+                        "spotify_id": "1r1uxoy19fzMxunt3ONAkG",
+                        "name": "Phoebe Bridgers"
+                    }
+                ]
+            },
+            {
+                "spotify_id": "24ngSzxpJGXuoxzgAuLznr",
+                "name": "Nobody Gets Me",
+                "artists_id": [
+                    {
+                        "spotify_id": "7tYKF4w9nC0nq9CsPZTHyP",
+                        "name": "SZA"
+                    }
+                ]
+            },
+            {
+                "spotify_id": "1kNuO1vPO5PzG0PGBNumzB",
+                "name": "Nobody Gets Me",
+                "artists_id": [
+                    {
+                        "spotify_id": "7tYKF4w9nC0nq9CsPZTHyP",
+                        "name": "SZA"
+                    }
+                ]
+            },
+            {
+                "spotify_id": "0LQkb08CCN9d8B7Hpc7cQL",
+                "name": "Nobody Gets Me",
+                "artists_id": [
+                    {
+                        "spotify_id": "7tYKF4w9nC0nq9CsPZTHyP",
+                        "name": "SZA"
+                    }
+                ]
+            },
+            {
+                "spotify_id": "4RLTfefBaZNuixNCmtNLej",
+                "name": "Nobody Gets Me",
+                "artists_id": [
+                    {
+                        "spotify_id": "7tYKF4w9nC0nq9CsPZTHyP",
+                        "name": "SZA"
+                    }
+                ]
+            },
+            {
+                "spotify_id": "6FJzs7mcNDdHADmCQgP8bC",
+                "name": "Nobody Gets Me",
+                "artists_id": [
+                    {
+                        "spotify_id": "7tYKF4w9nC0nq9CsPZTHyP",
+                        "name": "SZA"
+                    }
+                ]
+            },
+            {
+                "spotify_id": "3N1oUeig4HTHSm6VhfN319",
+                "name": "Nobody Gets Me - Instrumental",
+                "artists_id": [
+                    {
+                        "spotify_id": "4Xx6QMLTWppMwdABkN0Afj",
+                        "name": "Piano Tribute Players"
+                    }
+                ]
+            },
+            {
+                "spotify_id": "4gXtoKdnl6dtsFJubDKz2N",
+                "name": "Nobody Gets Me",
+                "artists_id": [
+                    {
+                        "spotify_id": "3mGCLimuzOdod4Lnegny4d",
+                        "name": "Twinkle Twinkle Little Rock Star"
+                    }
+                ]
+            }
+        ]
+    }
+}

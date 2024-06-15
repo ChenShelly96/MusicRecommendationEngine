@@ -1,38 +1,53 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Button, Col, Container, Form, Row } from 'react-bootstrap';
+import { Button, Card, Col, Container, Form, ListGroup, Row } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import '../styles/searchForm.css';
+import { fetchTopArtists, fetchUserProfile } from '../utils/functions';
 
-
-const topArtists = [
-    
-    { artist_name: 'Justin Bieber', image_url: 'https://i.scdn.co/image/ab6761610000e5eb8ae7f2aaa9817a704a87ea36' },
-    { artist_name: 'Ed Sheeran', image_url: 'https://i.scdn.co/image/ab6761610000e5eb3bcef85e105dfc42399ef0ba' },
-    { artist_name: 'The Weeknd', image_url: 'https://i.scdn.co/image/ab6761610000e5eb214f3cf1cbe7139c1e26ffbb' },
-    { artist_name: 'Rihanna', image_url: 'https://i.scdn.co/image/ab67616d0000b2732ed326786e4c61c6b1dbf222' },
-    
-    { artist_name: 'Avicii', image_url: 'https://i.scdn.co/image/ab6761610000e5ebae07171f989fb39736674113' },
-    { artist_name: 'Ratatat', image_url: 'https://i.scdn.co/image/2f0c6c465a83cd196e651e3d4e7625ba799a6f60' },
-    { artist_name: 'deadmau5', image_url: 'https://i.scdn.co/image/ab6761610000e5eb89ffabe57a25cedeca3309e7' },
-    { artist_name: 'Eminem', image_url: 'https://i.scdn.co/image/ab6761610000e5eba00b11c129b27a88fc72f36b' },
-    { artist_name: 'Drake', image_url: 'https://i.scdn.co/image/ab6761610000e5eb4293385d324db8558179afd9' },
-    { artist_name: 'Selena Gomez', image_url: 'https://i.scdn.co/image/ab6761610000e5ebc3c753851496854e29abff7a' },
-    
-    
-  ];
 const SearchForm = (props) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
   const [selectedArtists, setSelectedArtists] = useState([]);
   const [userName, setUserName] = useState('');
   const history = useHistory();
+  const [topArtists, setTopArtists] = useState([]);
+const [expandedArtists, setExpandedArtists] = useState([]);
+  useEffect(() => {
+
+const fetchUserProfileData = async () => {
+      try {
+        const userProfile = await fetchUserProfile();
+        console.log(userProfile);
+        setUserName(userProfile.username);
+      } catch (error) {
+        console.error('Error fetching user profile:', error);
+      }
+    };
+    
+
+  
+
+    fetchUserProfileData();
+   
+  }, []);
 
   useEffect(() => {
-    // Fetch user profile information
-    const fetchUserProfile = async () => {
+    const fetchTopArtistsData = async () => {
       try {
-        const token = localStorage.getItem('spotifyAuthToken'); // Adjust this as needed based on your auth implementation
+        const topArtists = await fetchTopArtists();
+        console.log(topArtists);
+        setTopArtists(topArtists);
+      } catch (error) {
+        console.error('Error fetching top artists:', error);
+      }
+    };
+    fetchTopArtistsData();
+  }, []);
+    
+    // Fetch user profile information
+    /*const fetchUserProfile = async () => {
+      try {
+        const token = localStorage.getItem('spotifyAuthToken'); // Adjust this as needed based on auth implementation
         const response = await axios.get('https://api.spotify.com/v1/me', {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -44,7 +59,7 @@ const SearchForm = (props) => {
       }
     };
     fetchUserProfile();
-  }, []);
+  }, []);*/
 
 
 
@@ -65,10 +80,10 @@ const SearchForm = (props) => {
   };
 
   const handleArtistClick = (artistName) => {
-    setSelectedArtists((prevSelected) =>
-      prevSelected.includes(artistName)
-        ? prevSelected.filter((name) => name !== artistName)
-        : [...prevSelected, artistName]
+    setExpandedArtists((prevExpanded) =>
+      prevExpanded.includes(artistName)
+        ? prevExpanded.filter((name) => name !== artistName)
+        : [...prevExpanded, artistName]
     );
   };
 
@@ -76,10 +91,27 @@ const SearchForm = (props) => {
   const handleMyPlaylistClick = () => {
     history.push('/myplaylist');
   };
-  const handleSave = () => {
-    const savedArtists = JSON.stringify(selectedArtists);
-    localStorage.setItem('savedArtists', savedArtists);
+  /*const handleSave = () => {
+    const playlist = JSON.stringify(selectedArtists);
+    localStorage.setItem('myplaylist', playlist);
     alert('Playlist saved!');
+  };*/
+
+  const handleSave = async () => {
+    try {
+      // Simulate saving selected artists to playlist
+      const savedplaylist = selectedArtists.map((artist) => ({
+        artist: artist,
+        songName: `Song by ${artist.artistName}`,
+        artistImg: artist.image_url,
+        songUri:artist.songUri ,
+      }));
+
+      localStorage.setItem('savedplaylist', JSON.stringify(savedplaylist));
+      alert('Playlist saved!');
+    } catch (error) {
+      console.error('Error saving playlist:', error);
+    }
   };
 
   const handleCancel = () => {
@@ -111,27 +143,34 @@ const SearchForm = (props) => {
             autoComplete="off"
           />
         </Form.Group>
-        <Button variant="info" type="submit">
+        <Button variant="info" type="submit" className='search-btn'>
           Search
         </Button>
       </Form>
-        <Container>
-            <div className="action-buttons">
-                <Button variant="success" onClick={handleSave}>
-                Save
-                </Button>
-                <Button variant="danger" onClick={handleCancel}>
-                Cancel
-                </Button>
-
-       
-                {selectedArtists.length === 10 && (
-                    <Button variant="primary" onClick={handleNext}>
-                        Next
+        <div>
+            <Container className="action-buttons">
+                <Col>
+                        <Button variant="success" onClick={handleSave}>
+                        Save
+                        </Button>
+                </Col>
+                <Col>
+                    <Button variant="danger" onClick={handleCancel}>
+                    Cancel
                     </Button>
-                )}
-            </div>
-        </Container>
+                </Col>
+        
+                    {selectedArtists.length === 10 && (
+                        <Button variant="primary" onClick={handleNext}>
+                            Next
+                        </Button>
+                    )}
+               
+            </Container>
+        </div>
+
+                    
+
 
       <div>
         <Container className="artist-buttons-container">
@@ -139,14 +178,29 @@ const SearchForm = (props) => {
             index % 5 === 0 && (
               <Row key={index}>
                 {topArtists.slice(index, index + 5).map((artist, subIndex) => (
-                  <Col key={subIndex} className="d-flex justify-content-center mb-4">
+                  <Col key={subIndex} className="d-flex justify-content-center mb-5">
+                    <div>
                     <button
                       className={`artist-button ${selectedArtists.includes(artist.artist_name) ? 'selected' : ''}`}
-                      onClick={() => handleArtistClick(artist.artist_name)}
+                      onClick={() => handleArtistClick(artist.data.artist_name)}
                     >
-                      <img src={artist.image_url} alt={artist.artist_name} className="artist-image" />
-                      <div>{artist.artist_name}</div>
+                      <img src={artist.data.image_url} alt={artist.data.artist_name} className="artist-image" />
+                      <div className="artist-name">{artist.data.artist_name}</div>
                     </button>
+                    {expandedArtists.includes(artist.data.artist_name) && (
+                        <Card bg={'Dark'} style={{ width: '40rem' }}>
+                            <ListGroup variant="flush">
+                            {artist.data.top_tracks.map((track, idx) => (
+                                    <ListGroup.Item>
+
+                                        <Button key={idx}>{track.track_name}</Button>
+                                    </ListGroup.Item> 
+                           
+                            ))}
+                            </ListGroup>
+                       </Card>
+                    )}
+                    </div>
                   </Col>
                 ))}
               </Row>
@@ -154,10 +208,7 @@ const SearchForm = (props) => {
           ))}
         </Container>
       </div>
-
-
-
-      </div>
+    </div>
 
   );
 };

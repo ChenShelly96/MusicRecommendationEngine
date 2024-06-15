@@ -25,7 +25,7 @@ const Home = (props) => {
         <Redirect to="/dashboard" />
       ) : (
         <div className="login">
-          
+           <div id="wave"></div>
 
                       {sessionExpired && (
                           <Alert variant="info">Session expired. Please login again.</Alert>

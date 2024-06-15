@@ -1,0 +1,16 @@
+{
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "workbench.preferredDarkColorTheme": "Visual Studio Dark - C++",
+    "workbench.colorTheme": "Visual Studio 2017 Dark - C++",
+    "window.autoDetectColorScheme": true,
+    "window.commandCenter": true,
+    "workbench.editor.decorations.colors": false,
+    "workbench.editor.autoLockGroups": {
+        "default": true,
+        "workbench.editor.chatSession": true,
+        "workbench.editorinputs.searchEditorInput": true,
+        "workbench.editors.gettingStartedInput": true
+    },
+    "workbench.activityBar.location": "top"
+}

@@ -1,33 +1,24 @@
-import React from 'react';
 import _ from 'lodash';
+import React from 'react';
 import { Button } from 'react-bootstrap';
-import { Redirect } from 'react-router-dom';
 import AlbumsList from './AlbumsList';
 import ArtistsList from './ArtistsList';
 import PlayList from './PlayList';
 
-const SearchResult = (props) => {
-  const {
-    isValidSession,
-    loadMore,
-    result,
-    setCategory,
-    selectedCategory
-  } = props;
+const SearchResult = ({ result, loadMore, setCategory, selectedCategory, isValidSession }) => {
   const { albums, artists, playlist } = result;
 
-  if (!isValidSession()) {
-    return (
-      <Redirect
-        to={{
-          pathname: '/',
-          state: {
-            session_expired: true
-          }
-        }}
-      />
-    );
-  }
+  const saveToPlaylist = (item) => {
+    const savedPlaylist = JSON.parse(localStorage.getItem('savedplaylist')) || [];
+    const newItem = {
+      artist: item.artists ? item.artists[0].name : item.name,
+      image_url: item.images ? item.images[0].url : ''
+      
+    };
+    savedPlaylist.push(newItem);
+    localStorage.setItem('savedplaylist', JSON.stringify(savedPlaylist));
+    alert('Saved to playlist!');
+  };
 
   return (
     <React.Fragment>

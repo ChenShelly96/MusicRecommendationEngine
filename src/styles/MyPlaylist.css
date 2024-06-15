@@ -1,0 +1,17 @@
+ .playlist-container{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 55px; 
+    padding: 20px;
+
+ }
+
+  .artist-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+  }

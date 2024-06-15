@@ -208,6 +208,12 @@ code {
 }
 
 */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 @media (prefers-reduced-motion: no-preference) {
     .App-logo {
       animation: App-logo-spin infinite 20s linear;
@@ -232,17 +238,22 @@ code {
         background-position: 600%
     }
 }
-/*  background: linear-gradient(90deg, rgb(245, 127, 23), rgb(233, 30, 99), rgb(156, 39, 176), rgb*/
+
 body {
     overflow-x: hidden;
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-y: scroll;
     background: linear-gradient(90deg, rgb(46, 46, 46), rgb(233, 30, 99), rgb(156, 39, 176), rgb(63, 81, 181));
-    height: 600%;
-    width: 100%;
+    
+    height: 10240px;
+    width:1024px;
+    overflow: hidden;
     background-size: 600% 100%;
     background-repeat: no-repeat;
-    animation: mygradient 24s linear infinite alternate;
-    -webkit-animation: mygradient 24s linear infinite alternate;
+    animation: mygradient 9s linear infinite alternate;
+    -webkit-animation: mygradient 9s linear infinite alternate;
 }
 
 @keyframes wave {
@@ -265,8 +276,8 @@ body {
 
 #wave {
    /* height: 600%; */
-    height: 100px;
-    width:100%;
+    height: 100%;
+    width:600px;
     overflow: hidden;
     position:-ms-page;
     bottom:0;
@@ -277,7 +288,6 @@ body {
   content: "";
   overflow: hidden;
   position: absolute;
-  /*bottom: 80%;*/
   top:65%; /* from bottom to top direct waves*/
   left: -250vw;
   width:600vw;
@@ -321,3 +331,68 @@ body {
     margin-bottom: 6vh;
     color: #ffffff;
   }
+ .playlist-container{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 55px; 
+    padding: 20px;
+
+ }
+  /* Responsive styles 
+@media (max-width: 1400px) {
+    .h5 {
+      font-size: 1.1em;
+      margin: 4vw 4vw 5vh 4vw;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .h5 {
+      font-size: 1em;
+      margin: 3vw 3vw 4vh 3vw;
+    }
+  
+    .buttons-container {
+      justify-content: center;
+      margin: 60%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .h5 {
+      font-size: 0.9em;
+      margin: 2vw 2vw 3vh 2vw;
+    }
+  
+    .buttons-container {
+      flex-direction: column;
+      align-items: center;
+      margin: 15px;
+    }
+  }
+  
+  @media (max-width: 500px) {
+   
+    .h5 {
+      font-size: 0.8em;
+      margin: 60%;
+    }
+  
+    .buttons-container {
+      margin: 10px;
+    }
+  }
+  
+  @media (max-width: 360px) {
+    .h5 {
+      font-size: 0.7em;
+      margin: 0.5vw 0.5vw 1vh 0.5vw;
+    }
+  
+    .buttons-container {
+      margin: 5px;
+    }
+  }*/
