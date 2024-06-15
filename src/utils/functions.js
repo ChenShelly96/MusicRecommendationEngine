@@ -90,5 +90,3 @@ export const fetchTopArtists = async () => {
   }
 };
 
-
-

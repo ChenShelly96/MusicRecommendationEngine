@@ -1,5 +1,5 @@
-import React from 'react';
 import _ from 'lodash';
+import React from 'react';
 import { getParamValues } from '../utils/functions';
 
 export default class RedirectPage extends React.Component {
@@ -14,6 +14,7 @@ export default class RedirectPage extends React.Component {
       const expiryTime = new Date().getTime() + access_token.expires_in * 1000;
       localStorage.setItem('params', JSON.stringify(access_token));
       localStorage.setItem('expiry_time', expiryTime);
+      localStorage.setItem('token', JSON.stringify(access_token));
       setExpiryTime(expiryTime);
       history.push('/dashboard');
     } catch (error) {

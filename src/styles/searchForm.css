@@ -10,7 +10,14 @@ body{
   overflow-y: scroll;
 
 }
-/* General styles for form labels */
+.form-group{
+
+    margin-bottom: 1rem;
+    margin-left: -80px;
+
+}
+
+
 .form-label {
     color: white;
   }
@@ -21,10 +28,13 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 0%;
-    margin-right: 20%;
-    margin-left: 0%;
-    padding: 20px;
+   
+    margin-left:-80px;
+    padding:0;
+    /*margin-right: 10%;
+    margin-left: 10%;
+     margin-top: 0%;*/
+    
   }
   
   /* Center the form within the container */
@@ -38,30 +48,35 @@ body{
 
   .search-btn{
     margin-left: 110%;
-     margin-top: -55px;
+    margin-top: -55px;
+
    
    
   }
+
+  /* Style for Save and Cancel Buttons */ 
   .action-btn-container{
      margin: 1rem;
       height: auto;
        box-sizing: border-box;
   }
   
-  /* Style for the error message */
+ 
   .errorMsg {
     color: red;
     text-align: center;
     margin-bottom: 10px;
   }
   
+  .second-container{
+    margin-right:50px;
+
+  }
 
   /* Styles for the artist buttons container */
   .artist-buttons-container {
       height: auto;
-      margin-left: 20%;
-      margin-right: 10%;
-      margin-top: 10%;
+      margin:auto;
       width: 100%;
   }
   
@@ -157,7 +172,9 @@ body{
   /* Responsive styles */
   @media (max-width: 1200px) {
     .artist-buttons-container {
-      max-width: 100%;
+        
+      
+         margin-left: 2px;
     }
     .artist-button img {
       width: 80px;

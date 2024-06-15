@@ -18,6 +18,8 @@ const fetchUserProfileData = async () => {
       try {
         const userProfile = await fetchUserProfile();
         console.log(userProfile);
+        const accessToken = localStorage.getItem('token');
+        console.log(accessToken);
         setUserName(userProfile.username);
       } catch (error) {
         console.error('Error fetching user profile:', error);
@@ -89,6 +91,7 @@ const fetchUserProfileData = async () => {
 
 
   const handleMyPlaylistClick = () => {
+    
     history.push('/myplaylist');
   };
   /*const handleSave = () => {
@@ -111,6 +114,26 @@ const fetchUserProfileData = async () => {
       alert('Playlist saved!');
     } catch (error) {
       console.error('Error saving playlist:', error);
+    }
+  };
+
+
+
+ const handleSaveTracks = (track, artist) => {
+    try {
+      const savedTrack = {
+        songName: track.track_name,
+        artistName: artist.artist_name,
+        songUri: track.uri,
+        artistImg: artist.image_url
+      };
+
+      const savedPlaylist = JSON.parse(localStorage.getItem('savedplaylist')) || [];
+      const updatedPlaylist = [...savedPlaylist, savedTrack];
+      localStorage.setItem('savedplaylist', JSON.stringify(updatedPlaylist));
+      alert('Track saved!');
+    } catch (error) {
+      console.error('Error saving track:', error);
     }
   };
 
@@ -172,7 +195,7 @@ const fetchUserProfileData = async () => {
                     
 
 
-      <div>
+      <div className='second-container'>
         <Container className="artist-buttons-container">
           {topArtists.map((artist, index) => (
             index % 5 === 0 && (
@@ -191,9 +214,11 @@ const fetchUserProfileData = async () => {
                         <Card bg={'Dark'} style={{ width: '40rem' }}>
                             <ListGroup variant="flush">
                             {artist.data.top_tracks.map((track, idx) => (
-                                    <ListGroup.Item>
+                                     <ListGroup.Item key={idx}>
+                                <Button onClick={() => handleSaveTracks(track,artist.data)}>
+                                  {track.track_name}
+                                </Button>
 
-                                        <Button key={idx}>{track.track_name}</Button>
                                     </ListGroup.Item> 
                            
                             ))}

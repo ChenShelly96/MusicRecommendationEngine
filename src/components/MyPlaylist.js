@@ -1,48 +1,42 @@
 import React, { useEffect, useState } from 'react';
+import { Container, ListGroup } from 'react-bootstrap';
 
-const MyPlaylist = ({ accessToken }) => {
+const MyPlaylist = () => {
   const [playlist, setPlaylist] = useState([]);
+  const [token, setToken] = useState('');
 
   useEffect(() => {
-    const savedplaylist = JSON.parse(localStorage.getItem('savedplaylist')) || [];
-    setPlaylist(savedplaylist);
+    const savedPlaylist = JSON.parse(localStorage.getItem('savedplaylist')) || [];
+    setPlaylist(savedPlaylist);
+
+    const accessToken = localStorage.getItem('token');
+    setToken(accessToken);
+    console.log(accessToken);
   }, []);
 
   const tracks = playlist.map((item) => ({
     uri: item.songUri,
-    artistName: item.artist.artist_name,
+    artistName: item.artistName,
     songName: item.songName,
   }));
 
   return (
-    <div>
+    <Container>
       <h1>My Playlist</h1>
-      <div
-        token={accessToken} // Use the accessToken prop
-        uris={tracks.map((track) => track.uri)}
-        autoPlay
-        styles={{
-          activeColor: '#1cb954',
-          bgColor: '#333',
-          color: '#fff',
-          loaderColor: '#1cb954',
-          sliderColor: '#1cb954',
-          trackNameColor: '#fff',
-          textColor: '#fff',
-        }}
-      />
-      <ul className="playlist-container">
-        {playlist.map((item, index) => (
-          <li key={index}>
-            <div>
-              <img src={item.artistImg} alt={item.artist.artistName} className="artist-image" />
-              <div className="artist-name">{item.artist.artistName}</div>
-              <div className="song-name">{item.songName}</div>
-            </div>
-          </li>
-        ))}
-      </ul>
-    </div>
+
+     
+        <ListGroup variant="flush" className="playlist-container">
+          {playlist.map((item, index) => (
+            <ListGroup.Item key={index}>
+              <div>
+             
+                <div className="song-name">{item.songName}</div>
+              </div>
+            </ListGroup.Item>
+          ))}
+        </ListGroup>
+      
+    </Container>
   );
 };
 

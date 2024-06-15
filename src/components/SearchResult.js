@@ -8,7 +8,7 @@ import PlayList from './PlayList';
 const SearchResult = ({ result, loadMore, setCategory, selectedCategory, isValidSession }) => {
   const { albums, artists, playlist } = result;
 
-  const saveToPlaylist = (item) => {
+ /* const saveToPlaylist = (item) => {
     const savedPlaylist = JSON.parse(localStorage.getItem('savedplaylist')) || [];
     const newItem = {
       artist: item.artists ? item.artists[0].name : item.name,
@@ -18,7 +18,7 @@ const SearchResult = ({ result, loadMore, setCategory, selectedCategory, isValid
     savedPlaylist.push(newItem);
     localStorage.setItem('savedplaylist', JSON.stringify(savedPlaylist));
     alert('Saved to playlist!');
-  };
+  };*/
 
   return (
     <React.Fragment>

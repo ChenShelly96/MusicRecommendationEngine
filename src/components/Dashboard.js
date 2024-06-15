@@ -15,7 +15,8 @@ import SearchResult from './SearchResult';
 const Dashboard = (props) => {
   const [isLoading, setIsLoading] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState('albums');
-  const { isValidSession, history } = props;
+  const { isValidSession,token, history } = props;
+
 
   const handleSearch = (searchTerm) => {
     if (isValidSession()) {

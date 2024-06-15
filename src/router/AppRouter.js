@@ -30,6 +30,9 @@ class AppRouter extends React.Component {
   setExpiryTime = (expiryTime) => {
     this.setState({ expiryTime });
   };
+  setToken = (token) => {
+    this.setState({ token });
+  };
 
   isValidSession = () => {
     const currentTime = new Date().getTime();
@@ -49,7 +52,7 @@ class AppRouter extends React.Component {
        
       } = process.env;
     try {
-      const response = await axios.post('https://accounts.spotify.com/api/token', {
+      const response = await axios.post('https://accounts.spotify.com/v1/me', {
         grant_type: 'refresh_token',
         refresh_token: this.state.refreshToken,
         client_id:REACT_APP_CLIENT_ID, 
@@ -57,11 +60,13 @@ class AppRouter extends React.Component {
       });
       const newExpiryTime = new Date().getTime() + response.data.expires_in * 1000;
       localStorage.setItem('access_token', response.data.access_token);
+      localStorage.setItem('token', JSON.stringify(this.state.refreshToken));
       localStorage.setItem('expiry_time', JSON.stringify(newExpiryTime));
       this.setState({ expiryTime: newExpiryTime });
     } catch (error) {
       console.error('Error refreshing token:', error);
       this.setState({ refreshToken: '' });
+      console.log(this.refreshToken);
       localStorage.removeItem('refresh_token');
     }
   };
@@ -93,14 +98,16 @@ class AppRouter extends React.Component {
             <Route
               path="/dashboard"
               render={(props) => (
-                <Dashboard isValidSession={this.isValidSession} {...props} />
+                <Dashboard isValidSession={this.isValidSession}
+                 setToken={this.access_token}
+                 {...props} />
               )}
             />
              <Route
               path="/myplaylist"
               render={(props) => <MyPlaylist
                  isValidSession={this.isValidSession} 
-                  accessToken={this.state.accessToken}
+                  token={this.state.refreshToken}
                  
                  {...props}
                  
