@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import React from 'react';
-import { Button } from 'react-bootstrap';
+import { Button ,Col,Container} from 'react-bootstrap';
 import AlbumsList from './AlbumsList';
 import ArtistsList from './ArtistsList';
 import PlayList from './PlayList';
@@ -22,41 +22,60 @@ const SearchResult = ({ result, loadMore, setCategory, selectedCategory, isValid
 
   return (
     <React.Fragment>
-      <div className="search-buttons">
+        <div>
+     
+       <Container className="search-button">
+        <Col>
         {!_.isEmpty(albums.items) && (
-          <button
+           
+          <Button
             className={`${
               selectedCategory === 'albums' ? 'btn active' : 'btn'
             }`}
             onClick={() => setCategory('albums')}
           >
             Albums
-          </button>
+          </Button>
+          
+        
         )}
+        </Col>
+
+        <Col>
         {!_.isEmpty(artists.items) && (
-          <button
+          <Button
             className={`${
               selectedCategory === 'artists' ? 'btn active' : 'btn'
             }`}
             onClick={() => setCategory('artists')}
           >
             Artists
-          </button>
+          </Button>
         )}
+        </Col>
+
+        <Col>
         {!_.isEmpty(playlist.items) && (
-          <button
+          <Button
             className={`${
               selectedCategory === 'playlist' ? 'btn active' : 'btn'
             }`}
             onClick={() => setCategory('playlist')}
           >
             PlayLists
-          </button>
+          </Button>
         )}
-      </div>
+        </Col>
+    </Container>
+   </div>
+
+
+
       <div className={`${selectedCategory === 'albums' ? '' : 'hide'}`}>
-        {albums && <AlbumsList albums={albums} />}
+        {albums &&   <AlbumsList albums={albums} />}
+      
       </div>
+      
       <div className={`${selectedCategory === 'artists' ? '' : 'hide'}`}>
         {artists && <ArtistsList artists={artists} />}
       </div>
@@ -73,6 +92,10 @@ const SearchResult = ({ result, loadMore, setCategory, selectedCategory, isValid
         )}
     </React.Fragment>
   );
+
+    console.log(albums);
+      console.log(artists);
+        console.log(playlist);
 };
 
 export default SearchResult;

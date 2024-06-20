@@ -11,7 +11,8 @@ const SearchForm = (props) => {
   const [userName, setUserName] = useState('');
   const history = useHistory();
   const [topArtists, setTopArtists] = useState([]);
-const [expandedArtists, setExpandedArtists] = useState([]);
+  const [expandedArtists, setExpandedArtists] = useState([]);
+  const [showNextButton, setShowNextButton] = useState(false);
   useEffect(() => {
 
 const fetchUserProfileData = async () => {
@@ -125,13 +126,21 @@ const fetchUserProfileData = async () => {
         songName: track.track_name,
         artistName: artist.artist_name,
         songUri: track.uri,
-        artistImg: artist.image_url
+        artistImg: artist.image_url,
+        artistId: artist.artist_id
       };
 
-      const savedPlaylist = JSON.parse(localStorage.getItem('savedplaylist')) || [];
-      const updatedPlaylist = [...savedPlaylist, savedTrack];
+      //const savedPlaylist = JSON.parse(localStorage.getItem('savedplaylist')) || [];
+      //const updatedPlaylist = [...savedPlaylist, savedTrack];
+      const updatedPlaylist = [...selectedArtists, savedTrack];
+       setSelectedArtists(updatedPlaylist);
       localStorage.setItem('savedplaylist', JSON.stringify(updatedPlaylist));
-      alert('Track saved!');
+      // Check if at least 10 tracks are selected to show the Next button
+      if (updatedPlaylist.length >= 10) {
+        setShowNextButton(true);
+      }
+      
+      /*alert('Track saved!');*/
     } catch (error) {
       console.error('Error saving track:', error);
     }
@@ -139,6 +148,8 @@ const fetchUserProfileData = async () => {
 
   const handleCancel = () => {
     setSelectedArtists([]);
+        setShowNextButton(false); // Reset show Next button state
+
   };
 
   const handleNext = () => {
@@ -215,7 +226,7 @@ const fetchUserProfileData = async () => {
                             <ListGroup variant="flush">
                             {artist.data.top_tracks.map((track, idx) => (
                                      <ListGroup.Item key={idx}>
-                                <Button onClick={() => handleSaveTracks(track,artist.data)}>
+                                <Button  className={`artist-button ${selectedArtists.includes(track.artist_name) ? 'selected' : ''}`} onClick={() => handleSaveTracks(track,artist.data)}>
                                   {track.track_name}
                                 </Button>
 

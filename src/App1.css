@@ -214,6 +214,10 @@ code {
   padding: 0;
   box-sizing: border-box;
 }
+element.style {
+    width: 16rem;
+    height: 16rem;
+}
 @media (prefers-reduced-motion: no-preference) {
     .App-logo {
       animation: App-logo-spin infinite 20s linear;
@@ -239,23 +243,25 @@ code {
     }
 }
 
-body {
+
+ body {
     overflow-x: hidden;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    overflow-y: scroll;
-    background: linear-gradient(90deg, rgb(46, 46, 46), rgb(233, 30, 99), rgb(156, 39, 176), rgb(63, 81, 181));
-    
-    height: 10240px;
-    width:1024px;
+    overflow-y:scroll;
     overflow: hidden;
-    background-size: 600% 100%;
+    box-sizing: border-box;
     background-repeat: no-repeat;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(90deg, rgb(247, 212, 151), rgb(251, 182, 62),
+       rgb(242, 162, 25), rgb(249, 133, 9));
     animation: mygradient 9s linear infinite alternate;
     -webkit-animation: mygradient 9s linear infinite alternate;
-}
-
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    color: white;
+    }
 @keyframes wave {
     0% {
         transform: rotate(0deg)

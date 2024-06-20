@@ -26,13 +26,15 @@ const Home = (props) => {
       ) : (
         <div className="login">
            <div id="wave"></div>
-
+      
+            <i className="bi bi-earbuds"></i>
                       {sessionExpired && (
                           <Alert variant="info">Session expired. Please login again.</Alert>
                       )}
                        <h5>
                              Hey Stranger! 
                         </h5>
+
                       <Button variant="info" type="submit" onClick={handleLogin}>
                           Login to spotify
                       </Button>

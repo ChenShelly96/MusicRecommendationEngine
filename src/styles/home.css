@@ -5,7 +5,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 90px; /* Full viewport height to center vertically */
+    height: auto; /* Full viewport height to center vertically */
     padding: 290px;
     margin-top: 40%;
     margin-right: 10%;
@@ -19,10 +19,11 @@
     font-weight: 600;
     margin-right: 5vw;
     margin-left: 5vw;
-    margin-top: -100vh;
+    margin-top: 10%;
     margin-bottom: 6vh;
     color: #ffffff;
   }
+
 
   
 @keyframes wave {
@@ -61,16 +62,16 @@
   /*frombottomtotopdirectwaves*/left: -250vw;
   /*width:600vw;
   height: 600vw;*/
-  background: rgba(0, 0, 0, 0.375);
-  /*Transparentblack*/border-radius: 48% 52% 52% 48% / 48% 52% 48% 52%;
+  background: rgba(25, 25, 25, 0.375);
+  /*Transparentblack*/border-radius: 58% 52% 52% 58% / 58% 52% 58% 52%;
   animation: wave 11s ease-in-out infinite;
-  animation-delay: -2s;
-  -webkit-animation: wave 11s ease-in-out infinite;
+  animation-delay: -8s;
+  -webkit-animation: wave 20s ease-in-out infinite;
 }
 
 #wave:after {
-  animation: wave 6s linear infinite;
-  -webkit-animation: wave 6s linear infinite;
+  animation: wave 10s linear infinite;
+  -webkit-animation: wave 10s linear infinite;
 }
 /* Responsive Styles */
 @media (max-width: 1200px) {
@@ -79,9 +80,9 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        /*height: -190px; Full viewport height to center vertically */
+    
         padding: 290px;
-        margin-top: 20%;
+        margin-top: 40%;
         margin-right: 20%;
         margin-left: 10%;
         

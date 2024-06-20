@@ -12,14 +12,13 @@ const MyPlaylist = () => {
     const accessToken = localStorage.getItem('token');
     setToken(accessToken);
     console.log(accessToken);
+    console.log(savedPlaylist);
+
+
+    
   }, []);
 
-  const tracks = playlist.map((item) => ({
-    uri: item.songUri,
-    artistName: item.artistName,
-    songName: item.songName,
-  }));
-
+  
   return (
     <Container>
       <h1>My Playlist</h1>
@@ -30,7 +29,8 @@ const MyPlaylist = () => {
             <ListGroup.Item key={index}>
               <div>
              
-                <div className="song-name">{item.songName}</div>
+                <div className="song-name">{item.songName} </div>
+               
               </div>
             </ListGroup.Item>
           ))}

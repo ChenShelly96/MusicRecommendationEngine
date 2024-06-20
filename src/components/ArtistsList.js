@@ -1,6 +1,6 @@
+import _ from 'lodash';
 import React from 'react';
 import { Card } from 'react-bootstrap';
-import _ from 'lodash';
 import music from '../images/music.jpeg';
 
 const ArtistsList = ({ artists }) => {
@@ -11,7 +11,7 @@ const ArtistsList = ({ artists }) => {
           {artists.items.map((artist, index) => {
             return (
               <React.Fragment key={index}>
-                <Card style={{ width: '18rem' }}>
+                <Card style={{ width: '10rem', height:'10rem'}}>
                   <a
                     target="_blank"
                     href={artist.external_urls.spotify}
@@ -28,7 +28,7 @@ const ArtistsList = ({ artists }) => {
                       <img src={music} alt="" />
                     )}
                   </a>
-                  <Card.Body>
+                  <Card.Body style={{ width: '10rem', height:'15rem'}}>
                     <Card.Title>{artist.name}</Card.Title>
                   </Card.Body>
                 </Card>
