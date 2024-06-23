@@ -1,0 +1,31 @@
+
+
+.comm-features-list{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 55px; 
+    padding: 20px;
+}
+
+.feature-btn{
+
+    width: 1110px;
+    height: 60px;
+    margin-top: 10px;
+}
+
+.save-selected-btn{
+
+    margin-top: 10px;
+    margin-left: 20px;
+
+}
+
+.next-selected-btn{
+    margin-top: 10px;
+    margin-left: 40px;
+
+}

@@ -2,11 +2,13 @@ import axios from 'axios';
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import '../App1.css';
+import CommonFeatures from '../components/CommonFeatures';
 import Dashboard from '../components/Dashboard';
 import Home from '../components/Home';
 import MyPlaylist from '../components/MyPlaylist';
 import NotFoundPage from '../components/NotFoundPage';
 import RedirectPage from '../components/RedirectPage';
+import SpotifyPlayer from '../components/SpotifyPlayer';
 class AppRouter extends React.Component {
     
   state = {
@@ -107,7 +109,27 @@ class AppRouter extends React.Component {
               path="/myplaylist"
               render={(props) => <MyPlaylist
                  isValidSession={this.isValidSession} 
+                  setToken={this.state.refreshToken}
+                 
+                 {...props}
+                 
+                 />}
+            />
+              <Route
+              path="/common-features"
+              render={(props) => <CommonFeatures
+                 isValidSession={this.isValidSession} 
                   token={this.state.refreshToken}
+                 
+                 {...props}
+                 
+                 />}
+            />
+            <Route
+              path="/spotify-player"
+              render={(props) => <SpotifyPlayer
+               
+                
                  
                  {...props}
                  

@@ -35,7 +35,7 @@ const Home = (props) => {
                              Hey Stranger! 
                         </h5>
 
-                      <Button variant="info" type="submit" onClick={handleLogin}>
+                      <Button variant="info"  type="submit" onClick={handleLogin}>
                           Login to spotify
                       </Button>
                   </div>

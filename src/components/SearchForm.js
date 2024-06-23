@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Button, Card, Col, Container, Form, ListGroup, Row } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import '../styles/searchForm.css';
-import { fetchTopArtists, fetchUserProfile } from '../utils/functions';
+import { createPlaylist, fetchTopArtists, fetchUserProfile } from '../utils/functions';
 
 const SearchForm = (props) => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -12,10 +12,11 @@ const SearchForm = (props) => {
   const history = useHistory();
   const [topArtists, setTopArtists] = useState([]);
   const [expandedArtists, setExpandedArtists] = useState([]);
-  const [showNextButton, setShowNextButton] = useState(false);
-  useEffect(() => {
+  const [showNextButton, setShowNextButton] = useState(true);
+  const [playlistId, setPlaylistId] = useState(null);
 
-const fetchUserProfileData = async () => {
+  useEffect(() => {
+    const fetchUserProfileData = async () => {
       try {
         const userProfile = await fetchUserProfile();
         console.log(userProfile);
@@ -26,12 +27,8 @@ const fetchUserProfileData = async () => {
         console.error('Error fetching user profile:', error);
       }
     };
-    
-
-  
 
     fetchUserProfileData();
-   
   }, []);
 
   useEffect(() => {
@@ -46,25 +43,6 @@ const fetchUserProfileData = async () => {
     };
     fetchTopArtistsData();
   }, []);
-    
-    // Fetch user profile information
-    /*const fetchUserProfile = async () => {
-      try {
-        const token = localStorage.getItem('spotifyAuthToken'); // Adjust this as needed based on auth implementation
-        const response = await axios.get('https://api.spotify.com/v1/me', {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
-        setUserName(response.data.display_name);
-      } catch (error) {
-        console.error('Error fetching user profile:', error);
-      }
-    };
-    fetchUserProfile();
-  }, []);*/
-
-
 
   const handleInputChange = (event) => {
     const searchTerm = event.target.value;
@@ -90,25 +68,17 @@ const fetchUserProfileData = async () => {
     );
   };
 
-
   const handleMyPlaylistClick = () => {
-    
     history.push('/myplaylist');
   };
-  /*const handleSave = () => {
-    const playlist = JSON.stringify(selectedArtists);
-    localStorage.setItem('myplaylist', playlist);
-    alert('Playlist saved!');
-  };*/
 
   const handleSave = async () => {
     try {
-      // Simulate saving selected artists to playlist
       const savedplaylist = selectedArtists.map((artist) => ({
         artist: artist,
         songName: `Song by ${artist.artistName}`,
         artistImg: artist.image_url,
-        songUri:artist.songUri ,
+        songUri: artist.songUri,
       }));
 
       localStorage.setItem('savedplaylist', JSON.stringify(savedplaylist));
@@ -118,9 +88,7 @@ const fetchUserProfileData = async () => {
     }
   };
 
-
-
- const handleSaveTracks = (track, artist) => {
+  const handleSaveTracks = async (track, artist) => {
     try {
       const savedTrack = {
         songName: track.track_name,
@@ -130,17 +98,22 @@ const fetchUserProfileData = async () => {
         artistId: artist.artist_id
       };
 
-      //const savedPlaylist = JSON.parse(localStorage.getItem('savedplaylist')) || [];
-      //const updatedPlaylist = [...savedPlaylist, savedTrack];
       const updatedPlaylist = [...selectedArtists, savedTrack];
-       setSelectedArtists(updatedPlaylist);
+      setSelectedArtists(updatedPlaylist);
       localStorage.setItem('savedplaylist', JSON.stringify(updatedPlaylist));
+
+      // Create or update the playlist on the server
+      if (playlistId) {
+        await createPlaylist({ playlistId, tracks: updatedPlaylist });
+      } else {
+        const newPlaylistId = await createPlaylist({ tracks: updatedPlaylist });
+        setPlaylistId(newPlaylistId);
+      }
+
       // Check if at least 10 tracks are selected to show the Next button
       if (updatedPlaylist.length >= 10) {
         setShowNextButton(true);
       }
-      
-      /*alert('Track saved!');*/
     } catch (error) {
       console.error('Error saving track:', error);
     }
@@ -148,23 +121,22 @@ const fetchUserProfileData = async () => {
 
   const handleCancel = () => {
     setSelectedArtists([]);
-        setShowNextButton(false); // Reset show Next button state
-
+    setShowNextButton(false); // Reset show Next button state
   };
 
   const handleNext = () => {
-    history.push('/select-features');
+    history.push('/common-features');
   };
+
   return (
-    
-       <div className = "search-form-container">
-        <div id="wave"></div>
-        <Button className="my-playlist-button" onClick={handleMyPlaylistClick}>
+    <div className="search-form-container">
+      <div id="wave"></div>
+      <Button className="my-playlist-button" onClick={handleMyPlaylistClick}>
         MyPlaylist
       </Button>
 
       <h1>Hey {userName},</h1>
-      <Form onSubmit={handleSearch}  className="search-form">
+      <Form onSubmit={handleSearch} className="search-form">
         {errorMsg && <p className="errorMsg">{errorMsg}</p>}
         <Form.Group controlId="formBasicEmail">
           <Form.Label>Choose 10 Artists and Songs to Ignite your personalized Recommendations</Form.Label>
@@ -181,30 +153,26 @@ const fetchUserProfileData = async () => {
           Search
         </Button>
       </Form>
-        <div>
-            <Container className="action-buttons">
-                <Col>
-                        <Button variant="success" onClick={handleSave}>
-                        Save
-                        </Button>
-                </Col>
-                <Col>
-                    <Button variant="danger" onClick={handleCancel}>
-                    Cancel
-                    </Button>
-                </Col>
-        
-                    {selectedArtists.length === 10 && (
-                        <Button variant="primary" onClick={handleNext}>
-                            Next
-                        </Button>
-                    )}
-               
-            </Container>
-        </div>
+      <div>
+        <Container className="action-buttons">
+          <Col>
+            <Button variant="success" onClick={handleSave}>
+              Save
+            </Button>
+          </Col>
+          <Col>
+            <Button variant="danger" onClick={handleCancel}>
+              Cancel
+            </Button>
+          </Col>
 
-                    
-
+          {selectedArtists.length === 1 && (
+            <Button variant="primary" onClick={handleNext}>
+              Next
+            </Button>
+          )}
+        </Container>
+      </div>
 
       <div className='second-container'>
         <Container className="artist-buttons-container">
@@ -214,28 +182,26 @@ const fetchUserProfileData = async () => {
                 {topArtists.slice(index, index + 5).map((artist, subIndex) => (
                   <Col key={subIndex} className="d-flex justify-content-center mb-5">
                     <div>
-                    <button
-                      className={`artist-button ${selectedArtists.includes(artist.artist_name) ? 'selected' : ''}`}
-                      onClick={() => handleArtistClick(artist.data.artist_name)}
-                    >
-                      <img src={artist.data.image_url} alt={artist.data.artist_name} className="artist-image" />
-                      <div className="artist-name">{artist.data.artist_name}</div>
-                    </button>
-                    {expandedArtists.includes(artist.data.artist_name) && (
+                      <button
+                        className={`artist-button ${selectedArtists.includes(artist.artist_name) ? 'selected' : ''}`}
+                        onClick={() => handleArtistClick(artist.data.artist_name)}
+                      >
+                        <img src={artist.data.image_url} alt={artist.data.artist_name} className="artist-image" />
+                        <div className="artist-name">{artist.data.artist_name}</div>
+                      </button>
+                      {expandedArtists.includes(artist.data.artist_name) && (
                         <Card bg={'Dark'} style={{ width: '40rem' }}>
-                            <ListGroup variant="flush">
+                          <ListGroup variant="flush">
                             {artist.data.top_tracks.map((track, idx) => (
-                                     <ListGroup.Item key={idx}>
-                                <Button  className={`artist-button ${selectedArtists.includes(track.artist_name) ? 'selected' : ''}`} onClick={() => handleSaveTracks(track,artist.data)}>
+                              <ListGroup.Item key={idx}>
+                                <Button className={`artist-button ${selectedArtists.includes(track.artist_name) ? 'selected' : ''}`} onClick={() => handleSaveTracks(track, artist.data)}>
                                   {track.track_name}
                                 </Button>
-
-                                    </ListGroup.Item> 
-                           
+                              </ListGroup.Item>
                             ))}
-                            </ListGroup>
-                       </Card>
-                    )}
+                          </ListGroup>
+                        </Card>
+                      )}
                     </div>
                   </Col>
                 ))}
@@ -245,7 +211,6 @@ const fetchUserProfileData = async () => {
         </Container>
       </div>
     </div>
-
   );
 };
 

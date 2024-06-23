@@ -18,7 +18,8 @@
         "react-scripts": "^3.0.1",
         "redux": "4.0.5",
         "redux-thunk": "2.3.0",
-        "spotify-web-api-node": "^5.0.2"
+        "spotify-web-api-node": "^5.0.2",
+        "spotify-web-sdk": "^0.7.2"
     },
     "scripts": {
         "start": "react-scripts --openssl-legacy-provider start",

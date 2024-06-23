@@ -1,0 +1,17 @@
+GET
+{{BASE_URL}}/api/playlist/{{USER_ID}}/all
+
+
+Response:
+
+{
+  "statusCode": 200,
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "playlists": {
+      "1718824125": "Sza tracks"
+    }
+  }
+}

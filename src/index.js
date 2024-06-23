@@ -12,5 +12,14 @@ ReactDOM.render(
    
     <AppRouter />
   </Provider>,
+
   document.getElementById('root')
+
+
+
+
+
+
 );
+
+module.hot.accept();

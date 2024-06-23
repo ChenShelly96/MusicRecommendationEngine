@@ -1,0 +1,21 @@
+POST
+{{BASE_URL}}/api/playlist/create
+
+Request:
+{
+    "user_id": "p4wj8fq8x0x7ddyogudmfcck0",
+    "name": "All SZA playlist",
+    "playlist": [{"track_id": "2hQo3aG0eeAnj3GSC0dfKL", "track_name": "Love Language", "artists": {"7tYKF4w9nC0nq9CsPZTHyP": "SZA"}, "album_id": "1nrVofqDRs7cpWXJ49qTnP"}, {"track_id": "6eT2V7nKXyMf47TwPbtgAD", "track_name": "Seek & Destroy", "artists": {"7tYKF4w9nC0nq9CsPZTHyP": "SZA"}, "album_id": "07w0rG5TETcyihsEIZR3qG"}, {"track_id": "5Y35SjAfXjjG0sFQ3KOxmm", "track_name": "Nobody Gets Me", "artists": {"7tYKF4w9nC0nq9CsPZTHyP": "SZA"}, "album_id": "07w0rG5TETcyihsEIZR3qG"}, {"track_id": "74NI58MQexwZjNu1Gu6GjT", "track_name": "Far", "artists": {"7tYKF4w9nC0nq9CsPZTHyP": "SZA"}, "album_id": "07w0rG5TETcyihsEIZR3qG"}, {"track_id": "4PMqSO5qyjpvzhlLI5GnID", "track_name": "Good Days", "artists": {"7tYKF4w9nC0nq9CsPZTHyP": "SZA"}, "album_id": "07w0rG5TETcyihsEIZR3qG"}, {"track_id": "2aJnyNu4PQxQ2lyj5boiMG", "track_name": "I Hate U", "artists": {"7tYKF4w9nC0nq9CsPZTHyP": "SZA"}, "album_id": "07w0rG5TETcyihsEIZR3qG"}, {"track_id": "2wSTnntOPRi7aQneobFtU4", "track_name": "Shirt", "artists": {"7tYKF4w9nC0nq9CsPZTHyP": "SZA"}, "album_id": "07w0rG5TETcyihsEIZR3qG"}, {"track_id": "6RQ5IwG7uADz9LDWliJGjU", "track_name": "Special", "artists": {"7tYKF4w9nC0nq9CsPZTHyP": "SZA"}, "album_id": "07w0rG5TETcyihsEIZR3qG"}, {"track_id": "2Sjx8DWZO5zaTyTAmgo2gY", "track_name": "Gone Girl", "artists": {"7tYKF4w9nC0nq9CsPZTHyP": "SZA"}, "album_id": "07w0rG5TETcyihsEIZR3qG"}, {"track_id": "4h5x3XHLVYFJaItKuO2rhy", "track_name": "Ghost in the Machine (feat. Phoebe Bridgers)", "artists": {"7tYKF4w9nC0nq9CsPZTHyP": "SZA", "1r1uxoy19fzMxunt3ONAkG": "Phoebe Bridgers"}, "album_id": "07w0rG5TETcyihsEIZR3qG"}]
+}
+
+
+Response:
+{
+    "statusCode": 200,
+    "headers": {
+        "Content-Type": "application/json"
+    },
+    "body": {
+        "playlist_id": "1718973401"
+    }
+}

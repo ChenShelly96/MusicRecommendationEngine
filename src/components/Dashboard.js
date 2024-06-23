@@ -12,12 +12,15 @@ import Loader from './Loader';
 import SearchForm from './SearchForm';
 import SearchResult from './SearchResult';
 
+const {
+   BASE_URL
+  } = process.env;
 const Dashboard = (props) => {
-  const [isLoading, setIsLoading] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState('albums');
-  const { isValidSession,token, history } = props;
+    const [isLoading, setIsLoading] = useState(false);
+    const [selectedCategory, setSelectedCategory] = useState('albums'); 
+    const { isValidSession,token, history } = props;
 
-
+  
   const handleSearch = (searchTerm) => {
     if (isValidSession()) {
       setIsLoading(true);
@@ -82,6 +85,7 @@ const Dashboard = (props) => {
             selectedCategory={selectedCategory}
             isValidSession={isValidSession}
           />
+           
         </div>
       ) : (
         <Redirect

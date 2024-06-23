@@ -1,0 +1,74 @@
+{
+    "playlist": [
+        {
+            "track_name": "Ghost in the Machine (feat. Phoebe Bridgers)",
+            "artist_name": "SZA",
+            "album_name": "SOS",
+            "duration": 218586,
+            "href": "https://api.spotify.com/v1/tracks/4h5x3XHLVYFJaItKuO2rhy"
+        },
+        {
+            "track_name": "Nobody Gets Me",
+            "artist_name": "SZA",
+            "album_name": "SOS",
+            "duration": 180853,
+            "href": "https://api.spotify.com/v1/tracks/5Y35SjAfXjjG0sFQ3KOxmm"
+        },
+        {
+            "track_name": "Special",
+            "artist_name": "SZA",
+            "album_name": "SOS",
+            "duration": 158840,
+            "href": "https://api.spotify.com/v1/tracks/6RQ5IwG7uADz9LDWliJGjU"
+        },
+        {
+            "track_name": "Love Language",
+            "artist_name": "SZA",
+            "album_name": "SOS",
+            "duration": 183893,
+            "href": "https://api.spotify.com/v1/tracks/2hQo3aG0eeAnj3GSC0dfKL"
+        },
+        {
+            "track_name": "I Hate U",
+            "artist_name": "SZA",
+            "album_name": "SOS",
+            "duration": 173906,
+            "href": "https://api.spotify.com/v1/tracks/2aJnyNu4PQxQ2lyj5boiMG"
+        },
+        {
+            "track_name": "Good Days",
+            "artist_name": "SZA",
+            "album_name": "SOS",
+            "duration": 278480,
+            "href": "https://api.spotify.com/v1/tracks/4PMqSO5qyjpvzhlLI5GnID"
+        },
+        {
+            "track_name": "Gone Girl",
+            "artist_name": "SZA",
+            "album_name": "SOS",
+            "duration": 244026,
+            "href": "https://api.spotify.com/v1/tracks/2Sjx8DWZO5zaTyTAmgo2gY"
+        },
+        {
+            "track_name": "Shirt",
+            "artist_name": "SZA",
+            "album_name": "SOS",
+            "duration": 181840,
+            "href": "https://api.spotify.com/v1/tracks/2wSTnntOPRi7aQneobFtU4"
+        },
+        {
+            "track_name": "Seek & Destroy",
+            "artist_name": "SZA",
+            "album_name": "SOS",
+            "duration": 203733,
+            "href": "https://api.spotify.com/v1/tracks/6eT2V7nKXyMf47TwPbtgAD"
+        },
+        {
+            "track_name": "Far",
+            "artist_name": "SZA",
+            "album_name": "SOS",
+            "duration": 180680,
+            "href": "https://api.spotify.com/v1/tracks/74NI58MQexwZjNu1Gu6GjT"
+        }
+    ]
+}

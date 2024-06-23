@@ -1,0 +1,100 @@
+{
+    "common_features": [
+        {
+            "rule": "all_same_rule",
+            "field": "release_month",
+            "value": 12
+        },
+        {
+            "rule": "all_same_rule",
+            "field": "disc_number",
+            "value": 1
+        },
+        {
+            "rule": "all_same_rule",
+            "field": "artist_age_when_released",
+            "value": 33
+        },
+        {
+            "rule": "dominant_value_rule",
+            "field": "album_label",
+            "value": [
+                "Top Dawg Entertainment/RCA Records"
+            ]
+        },
+        {
+            "rule": "dominant_value_rule",
+            "field": "album_name",
+            "value": [
+                "SOS"
+            ]
+        },
+        {
+            "rule": "multiple_threshold_rule",
+            "field": "album_popularity",
+            "value": {
+                "min": 80,
+                "max": 89
+            }
+        },
+        {
+            "rule": "all_same_rule",
+            "field": "album_total_tracks",
+            "value": 23
+        },
+        {
+            "rule": "percentage_rule",
+            "field": "emotion",
+            "value": [
+                "relaxed"
+            ]
+        },
+        {
+            "rule": "dominant_value_rule",
+            "field": "artist_name",
+            "value": [
+                "SZA"
+            ]
+        },
+        {
+            "rule": "within_threshold_rule",
+            "field": "artist_begin_date",
+            "value": {
+                "min": 1989,
+                "max": 1994
+            }
+        },
+        {
+            "rule": "all_same_rule",
+            "field": "artist_end_date",
+            "value": null
+        },
+        {
+            "rule": "multiple_threshold_rule",
+            "field": "artist_age",
+            "value": {
+                "min": 30,
+                "max": 35
+            }
+        },
+        {
+            "rule": "percentage_rule",
+            "field": "artist_country",
+            "value": [
+                "US"
+            ]
+        },
+        {
+            "rule": "percentage_rule",
+            "field": "genre",
+            "value": [
+                "pop",
+                "rap",
+                "r&b",
+                "blues",
+                "hiphop",
+                "rbsoul"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,52 @@
+
+@import url('https://fonts.googleapis.com/css?family=Adamina|Fjalla+One');
+
+
+
+.player__wrapper {
+    width: 600px;
+    height: 316px;
+    padding: 20px 35px;
+    box-shadow: 3px 3px 15px rgba(51, 51, 51, 0.65);
+    position: relative;
+   
+}
+
+.Button {
+    height: 45px;
+    width: 45px;
+    border: 2px solid #464444;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 75px;
+    pointer-events: all;
+}
+
+.fa {
+    color: #877d7d;
+    font-size: 24px;
+}
+
+
+.Scrubber {
+    position: absolute;
+    bottom:95px;
+    left: 100px;
+    width: 54%;
+    height: 5%;
+    opacity: 1;
+    transition: opacity .25s ease;
+    z-index: 0;
+
+
+}
+
+.Scrubber-Progress {
+    height: 100%;
+    width: 0%;
+    pointer-events: none;
+    background-color: rgb(255, 255, 255);
+    transition: width 0.25s ease;
+}
